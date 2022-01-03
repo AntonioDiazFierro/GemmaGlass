@@ -1,0 +1,19 @@
+body{
+    min-height: 100vh;
+}
+main {
+    min-height: 100%;
+}
+.mainResult{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.notFinded{
+    color: tomato;
+}
+.titleSearch{
+    font-size: 1.5rem;
+    text-align: center;
+}

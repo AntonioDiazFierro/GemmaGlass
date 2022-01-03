@@ -1,0 +1,128 @@
+
+.mainLogin{
+   
+    padding: 15px;
+}
+
+.titulo-login{
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;    
+}
+
+.form-login{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 34px ;
+}
+.container-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+   /*  border: 1px solid red; */
+   
+}
+.form-login label{
+    padding: 5px 0;
+}
+/* .form-login input{
+    height: 35px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.form-login input:hover{
+border:solid 2px var(--header);
+} */
+
+.recupero-login{
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--header);
+}
+.recupero-login:hover{
+    color: #152847;
+}
+
+.btn-login{
+    background-color: var(--header);
+    width: 130px;
+    height: 40px;
+    align-self: center;
+    margin: 10px  0 10px 0;
+    font-size: 16px;
+    border: solid 1px #3a81f3;
+}
+.btn-login:hover {
+background-color: #116af8;
+color: white;
+font-weight: bold;    
+}
+.new-account-login{
+    align-self: center;
+    font-size: 14px;
+}
+.new-account-login a{
+    text-decoration: none;
+    color: var(--header);
+}
+.new-account-login a:hover{
+    color: var(--tipos);
+}
+.container_check{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.checkRegister{
+    margin: 0 5px 0;
+}
+.labelRegister{
+    font-size: 12px;
+}
+/*  VERSIÓN TABLET  */
+@media (min-width: 768px) {
+    .container-form{
+       max-width: 600px;
+       margin: auto auto;
+    }
+    }
+
+    /*  VERSIÓN DESKTOP  */
+@media (min-width: 992px) {
+    .titulo-login{
+        font-size: 32px;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .form-login .label{
+        padding: 8px 0;
+        font-size: 20px;
+    }
+    /* .form-login input{
+        height: 40px;
+        padding: 5px;
+        margin-bottom: 15px;
+    } */
+    /* .input{
+        height: 15px;
+    } */
+    .labelRegister{
+        font-size: 14px;
+    }
+    .recupero-login{
+        font-size: 15px;
+    }
+    .new-account-login{
+        font-size: 18px;
+    }
+    .btn-login{
+       height: 42px;
+    }
+    }

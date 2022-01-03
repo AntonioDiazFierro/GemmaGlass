@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+<body>
+<!-- header -->
+
+<%- include("partials/header")  %> 
+<!-- fin header  -->
+
+
+
+    <main class="main">
+        <form id="form" action="/users/addUser/" method="POST" enctype="multipart/form-data"><!-- debo poner enctype para que suba el archivo -->
+            <div class="container-register">
+                <div class="welcome">
+                    <h3>¡Bienvenido!</h3>
+                    <p class="subTitle">Creá tu cuenta para comprar con mas facilidad</p>
+                </div>
+                <div class="exterior">
+                    <div class="my-data">
+                        <p class="complete">Completá tus datos</p>
+                        <section class="section1">
+                            <div class="name">
+                                <div class="left-side">
+                                    <label class=" nameLabel" for="">Nombre</label>
+                                    <input onclick="myFclic()" class="input" type="text" name="name" id="name" value="<%= locals.old && old.name %>">
+                                    <% if (locals.errors && errors.name) { %>
+                                        <span class="text-danger"><%= errors.name.msg %> </span>
+                                    <% } %>
+                                    <span class="text-danger" id="errorNombre"> </span>
+                                </div>
+                                <div class="right-side">
+                                    <label class=" nameLabel" for="" id="lana">Apellido</label>
+                                    <input class="input" type="text" name="lastName" id="lastName" value="<%= locals.old && old.lastName %>">
+                                    <% if (locals.errors && errors.lastName) { %>
+                                        <span class="text-danger"><%= errors.lastName.msg %> </span>
+                                        
+                                    <% } %>
+                                    <span class="text-danger" id="errorApellido"> </span>
+                                </div>                   
+                                <!-- <div class="left-side">
+                                    <label class="label nameLabel" for="">Dirección</label>
+                                    <input class="input" type="adress" name="address" value="<%= locals.old && old.address %>">
+                                </div> -->
+                                                  
+                            </div>            
+                            
+                        </section>
+                        
+                        <section class="section2">
+                            
+                                <label class=" midle" for="" >Teléfono</label>
+                                <input class="input myInput" type="text" name="phone" id="phone" value="<%= locals.old && old.phone %>"> <!-- este es similar a un if ternario pero sin el else -->
+                                <% if (locals.errors && errors.phone) { %>
+                                    <span class="text-danger"><%= errors.phone.msg %> </span>
+                                <% } %>
+                                <span class="text-danger" id="errorTelefono"> </span>
+                             
+                            <label class=" midle "for="">Correo Electrónico</label>
+                            <input class=" input myInput"type="email" name="email" id="email" placeholder="mail@domain.com" value="<%= locals.old && old.email %>">
+                            <% if (locals.errors && errors.email) { %>
+                                <span class="text-danger"><%= errors.email.msg %> </span>
+                            <% } %>
+                            <span class="text-danger" id="errorEmail"> </span>
+                            <label class=" midle" for="">Contraseña</label>
+                            <div class="pass1">
+                                <input type="password" class="input"  name="pass" id="myInput1" value="<%= locals.old && old.pass %>">
+                                
+                                <i class="far fa-eye"  onclick="myFunction()" id="eye1"></i>
+                            </div>
+                            <% if (locals.errors && errors.pass) { %>
+                                <span class="text-danger"><%= errors.pass.msg %> </span>
+                            <% } %>
+                            <span class="text-danger" id="errorContraseña"> </span>
+                            <label class=" midle"for="">Confirmar contraseña</label>
+                            <div class="pass2">                                    
+                                <input type="password" class="input"   name="pass2" id="myInput2" value="<%= locals.old && old.pass2 %>">
+                                
+                                <i class="far fa-eye"  onclick="myFunction2()" id="eye2"></i>
+                            </div>  
+                            <% if (locals.errors && errors.pass2) { %>
+                                <span class="text-danger"><%= errors.pass2.msg %> </span>
+                                <span id="validate">Las contraseñas no coinciden</span>
+                            <% } %>
+                            <span class="text-danger" id="errorContraseña2"> </span>
+                            
+                        </section>
+                        <section class="section3">
+                            <div class="imagesReg" id="imagePreview" >
+                                <img id="old" src="/image/userAvatars/avatar.png " alt="">
+                            </div>
+                            <div class="inputMask bordeColor">
+                                <input class="inputOut" type="file" id="examinar" name="avatar" value=""> <!-- este nombre va en el metodo post al cargar en multer -->
+                                Elija una Imagen
+                            </div> 
+                            <p id="errorImage"></p>
+    
+                              <span class="text-danger" id="errorImagen"> </span>
+                        </section>
+                        
+                                    
+                    </div>
+                </div> 
+                <div class="container_check">
+                    <input type="checkbox" name="terms" id="check" >
+                    <label class="label checkRegister" for="check">Acepto los Terminos y Condiciones</label>
+                </div>
+                <% if (locals.errors && errors.terms) { %>
+                    <span class="text-danger"><%= errors.terms.msg %> </span>
+                <% } %>
+                <span class="text-danger" id="errorTerminos"> </span>
+                <button class="btn "  id="button" type="submit">Registrarse</button>
+                <span class="text-danger" id="errorSubmit"> </span>
+                        <div class="login-cont">
+                            <a class="ingresa" href="/users/login">
+                                ¿Ya tenés cuenta? Ingresá
+                            </a>
+                        </div>              
+            </div>
+        </form>
+        
+    </main>
+    <script>
+    /* var button = document.getElementById("button") */
+        
+    
+
+    
+    function validateOff(){
+       
+        let mesage = document.getElementById("validate");
+        mesage.style.display="none";
+        
+    }
+    function myFunction() {
+        let x1 = document.getElementById("myInput1"); 
+        let eye1 = document.getElementById("eye1");
+        if (x1.type == "password") {
+            x1.type = "text";
+            eye1.style.color= "red";
+        } else {
+            x2.type = "password";
+            eye1.style.color= "#4F8DF0";
+            
+        } 
+                  
+    }    
+    function myFunction2() {
+        let x2 = document.getElementById("myInput2");
+        let eye2 = document.getElementById("eye2")
+        if (x2.type == "password") {
+            x2.type = "text";
+            eye2.style.color= "red";
+        } else {
+            x2.type = "password";
+            eye2.style.color= "#4F8DF0";
+            
+        }
+    }
+    let $pass1 = document.querySelector("#myInput1")
+    let $pass2 = document.querySelector("#myInput2")
+    let $textDanger = document.querySelector(".text-danger")
+    $pass2.addEventListener('blur', function(){
+    if(!$pass1.value === $pass2.value){
+         $textDanger.innerText = 'Campo requerido';
+         $sexo.classList.add('is-invalid')
+     }else {
+         $sexo.classList.remove('is-invalid');
+         $sexo.classList.add('is-valid');
+         $sexErrors.innerHTML = ''
+     }
+ })
+
+
+
+
+    function validate(){
+        let vali1 = document.getElementsByClassName("myInput");
+        let vali2 = document.getElementById("myInput2");
+        let mesage = document.getElementById("validate")
+        
+        let form = document.getElementById("form")
+        if (vali1.value !== vali2.value){
+            mesage.style.display ="flex"
+            
+        }else{
+            button.style.display = "initial"
+        }
+    }
+    let inputImage = document.getElementById('examinar')
+inputImage.addEventListener('change', 
+function fileValidation(){
+    var errorImage = document.getElementById('errorImage')
+    var filePath = inputImage.value; //Capturo el valor del input
+    var allowefExtensions = /(.jpg|.jpeg|.png|.gif)$/i; //Extensiones permitidas
+    if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+        let error = 'La imagen no es válida, usá extensiones (.jpg - .jpeg - .png - .gif)'
+        errorImage.innerHTML = error;
+        inputImage.value = '';
+        document.getElementById('imagePreview').innerHTML = '<img src="/image/userAvatars/avatar.png"/>'; //mantengo la imagen po default
+        return false;
+    }else{
+        // Image preview
+        if(inputImage.files && inputImage.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                document.getElementById('imagePreview').innerHTML = '<img src="' + e.target.result +'"/>';
+            };
+            reader.readAsDataURL(inputImage.files[0]);
+            errorImage.innerHTML = '';
+        }
+    }
+})
+    
+    </script> 
+<!-- footer -->
+
+<!-- fin footer  -->
+<%- include("partials/footer")  %> 
+<script src="../js/validationRegisterFront.js"></script>
+</body>
+<!-- footer -->
+
+</html>

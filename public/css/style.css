@@ -1,0 +1,59 @@
+/* #FF61E4 */
+
+
+
+
+@import url(header.css);
+@import url(footer.css);
+@import url(login.css);
+@import url(turnos.css);
+@import url(home.css);
+@import url(cart.css);
+@import url(registro.css);
+@import url(detalleProducto.css);
+@import url(productos.css);
+@import url(modal.css);
+@import url(burger.css);
+@import url(user.css);
+@import url(listado.css);
+@import url(edition.css);
+@import url(result.css);
+@import url(general.css);
+@import url(vistaProductos.css);
+@import url(modalcat.css);
+@import url(adminRol.css);
+@import url(confirmDelete.css);
+@import url(formarmat.css);
+@import url(fonts.css);
+
+
+
+
+
+:root{
+    /* color 1 */
+    --background:#f7f8fb;
+    --grey : #444444;
+    --red : #b92519;
+    --tipos:#152847;
+    --header:#4F8DF0;
+    --navbar : rgb(182, 209, 252);
+    /* color 2 */
+    --tipos1:#091a34;
+    --header1:#4F8DF0;
+    --tipos2:#69036c;
+    --header2:#FF61E4;
+    --tipos3:#003106;
+    --header3:#6BBD74;
+    --tipos4:#0c242d;
+    --header4:#69d1f7;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+<body>
+<!-- header -->
+
+<%- include("partials/header")  %> 
+<!-- fin header  -->
+
+    
+    <h2 class="titulo-turno">Solicitá tu turno</h2>
+<div class="container-turno">
+    <form action="" class="form-turno">
+        <label for="name"> Nombre y apellido</label>
+        <input type="text" name="name" id="" placeholder="Escribe tu nombre y apellido">
+        <label for="tel">Teléfono</label>
+        <input type="number" name="tel" id="" placeholder="Escribe tu teléfono">
+        <label for="email">Email</label>
+        <input type="email" name="email " id="" placeholder="Escribe tu email">
+        <label for="sucursales">Sucursales</label>
+                <select name="sucursales">
+                <option selected value="0"> Elige una opción </option>
+                 <option value="1">Sucursar 1</option> 
+                 <option value="2">Sucursar 2</option> 
+                 <option value="3">Sucursar 3</option>
+                </select>
+<label for="fecha">Fecha y hora</label>
+<input type="datetime-local" name="fecha" id="">
+<button type="submit" class="btn btn-turno">Confirmar</button>
+    </form>
+</div>
+<!-- footer -->
+<%- include("partials/footer")  %> 
+<!-- fin footer  -->
+</body>
+</html>

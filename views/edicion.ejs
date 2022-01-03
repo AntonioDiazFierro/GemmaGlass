@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+<script src='/js/editProduct.js' defer></script>
+<script src='/js/adminProduct.js' defer></script>
+
+
+
+<body>
+
+  <%- include('./partials/headerAdmin.ejs') %> 
+  <div class="addBody"> 
+  <section class="wb">
+    <h5 class="editSubtitles">Ingresá la información actualizada:</h5>
+    <form class="tamanioFondo" id="form" action="/admin/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+              <label class="tamanio" for="name">Nombre del producto: </label>
+              
+                <input class="tamanio clean" type="text" name="name" id="name"  value="<%-product.name%>">
+                
+               
+              <label class="tamanio" for="price">Precio: </label>
+               <input class="tamanio clean" type="text" name="price" id="price" value="<%= product.price %>">
+               <% if (locals.errors && errors.price) { %>
+                <script>
+                let price = document.getElementsByName('price');
+                price[0].value="";
+                price[0].placeholder= "<%= errors.price.msg %>";
+                </script>
+            <% } %>
+              <label class="tamanio" for="discount">Descuento: </label>
+              <select class="tamanio" id="specificSizeSelect" name="discount"  >
+                <option value="<%= product.discount %>"><%= product.discount %> % de descuento</option>
+                <option value="0">0 % de descuento</option>
+                <option value="5">5 % de descuento</option>
+                <option value="10">10 % de descuento</option>
+                <option value="15">15 % de descuento</option>
+                <option value="20">20 % de descuento</option>
+            
+            </select>
+               
+              <label class="tamanio" for="category">Categoria: </label>
+              <select id="specificSizeSelect" name="category"  class="tamanio">
+               <% locals.categories.forEach(category => { %>
+                  <option value="<%- category.name %>" <%= product.category == category.id ? "selected" : null %>><%- category.name %></option>
+               <% }) %>
+              </select>
+              <label class="tamanio" for="shape">Forma: </label>
+              <select id="specificSizeSelect" name="shape"  class="tamanio">
+              <% locals.shapes.forEach(shape => { %>
+                <option value="<%- shape.name %>" <%= product.shapeId == shape.id ? "selected" : null %>><%- shape.name %></option>
+             <% }) %>
+            </select>
+              <label class="tamanio" for="brand">Marca: </label>
+              <select id="specificSizeSelect" name="brand"  class="tamanio">
+                <% locals.brands.forEach(brand => { %>
+                   <option value="<%- brand.name %>" <%= product.brandId == brand.id ? "selected" : null %>><%- brand.name %></option>
+                <% }) %>
+               </select>
+              <label class="tamanio" for="material">Material: </label>
+              <select id="specificSizeSelect" name="material"  class="tamanio">
+                <% locals.materials.forEach(material => { %>
+                  <option value="<%- material.name %>" <%= product.materialId == material.id ? "selected" : null %>><%- material.name %></option>
+               <% }) %>
+              </select>
+              <label class="tamanio" for="height">Altura: </label>
+               <input class="tamanio" type="text" name="height" id="height" value="<%= product.height %>">
+               <% if (locals.errors && errors.height) { %>
+                <script>
+                let height = document.getElementsByName('height');
+                height[0].value="";
+                height[0].placeholder= "<%= errors.height.msg %>";
+                </script>
+            <% } %>
+              <label class="tamanio clean" for="width">Ancho: </label>
+               <input class="tamanio clean" type="text" name="width" id="width" value="<%= product.width %>">
+               <% if (locals.errors && errors.width) { %>
+                <script>
+                let width = document.getElementsByName('width');
+                width[0].value="";
+                width[0].placeholder= "<%= errors.width.msg %>";
+                </script>
+            <% } %>
+            <div class="desPrew">
+              <div id="img-preview">
+                <% for( let i = 0; i < imageArray.length; i++ ) {%>
+                  
+                  <img class="img" src="/image/productImages/<%- imageArray[i].images %> " id="image<%- i %>" alt="">
+                <% } %>
+              </div>
+              <textarea  name="description" class="description" cols="40" rows="5"><%= product.description %></textarea>
+          </div>
+              <div class="buttons">
+                <div class="inputFile bordeColor btn">
+                  <input class="archivos " id ="archivos" type="file" name="archivos" onchange="leer(this)" multiple>
+                  Subí fotos del producto
+                </div>
+                <button class="btn cleanImages" type="button">Limpiar Fotos</button>
+                <button class="btn" type="submit">Aceptar</button>
+                <a class="btn cancel" >Cancelar</a>
+                
+              </div>
+          </form> 
+          
+  </section>
+  <span id="submitErrors"></span>
+</div>
+
+</body>
+</html>

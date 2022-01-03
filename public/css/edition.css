@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --header : rgb(79, 141,240);
+    --navbar : rgb(182, 209, 252);
+    --footer : rgb(21, 40, 72);
+    --fondo : #fafafa;
+    /* Fonts */
+    --font-primary : 'Roboto', sans-serif;
+    /* Font size */
+    --paragraph : 12px;
+    --title : 24px;
+    --price : 18px;
+    --descriptions : 16px;
+}
+.addBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.previous{
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 50px; */
+    align-items: center;
+    border: 1px solid red;
+}
+.description{
+    width: 75%;
+    height: 80px;
+    padding: 7px;
+    border: 1px solid var(--tipos);
+}
+#img-preview{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 60vw;
+    
+}
+#img-preview img{
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    margin: auto 20px;
+    object-fit: contain;
+    border: 1px solid var(--tipos);
+}
+.archivos{
+    border: 10000px solid transparent;
+    cursor: pointer;
+    font-size: 10000px;
+    margin: 0;
+    opacity: 0;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    right: -1000px;
+    top: -1000px;
+}
+.wb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 50px auto 0  ; */
+    justify-content: space-evenly;
+    width: 100vw;
+    border: 1px solid gray;
+    text-align: center;
+    /* border: 1px solid red; */
+   
+}
+
+
+
+.editSubtitles {
+    text-align: center;
+    font-size: 13px ;
+    margin: 10px auto 10px;
+    text-transform: uppercase;
+}
+
+.wb .tamanio{
+    /* height: 35px; */
+    width: 45vw;
+    border: solid 1px var(--navbar);
+    padding: 2px;
+    margin: 0 5px 5px; 
+    font-size: 12px;
+}
+.tamanio::placeholder{
+    color: red;
+}
+.tamanioFondo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.label{
+    font-size: 14px;
+}
+/* .archivos{
+    font-size: 12px;
+} */
+.inputFile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: var(--tipos);
+    cursor: pointer;
+    font-size: 12px ;
+    font-weight: bold;
+    margin: 0 auto 0;    
+    overflow: hidden;   
+    position: relative;
+}
+   
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* border: 1px solid green; */
+    right: 0px;   
+    
+}
+.is-invalid{
+    border: 1px solid red !important;
+    background-image: url(/image/error.svg);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+}
+.is-valid{
+    border: 1.5px solid green !important;
+    background-image: url(/image/valid.svg);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    border-radius: 5px;
+}
+#submitErrors{
+    color: red;
+}
+
+/*  VERSIÓN TABLET  */
+@media (min-width: 768px) {
+    .wb {
+        width: 70vw;
+    }
+    
+    .wb .tamanio{
+        width: 25vw;
+        
+    }
+    
+    #img-preview img{
+        width: 65px;
+        height: 65px;
+        margin-top: 5px;
+} 
+.description{
+    width: 100%;
+    height: 55px;
+    font-size: 12px;
+}
+}

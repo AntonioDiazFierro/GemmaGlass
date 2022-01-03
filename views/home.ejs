@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
+  <%- include('./partials/header.ejs') %>
+  
+        <!-- <div class="carouselContainer">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/image/carousel/1.png" class="d-block w-100" alt="Lentes de sol">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/image/carousel/2.png" class="d-block w-100" alt="Lentes gaming">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/image/carousel/3.png" class="d-block w-100" alt="Marcos para recetas">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/image/carousel/4.png" class="d-block w-100" alt="Lentes de contacto">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/image/carousel/5.png" class="d-block w-100" alt="Mantené tus cristales limpios">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/image/carousel/6.png" class="d-block w-100" alt="Encontrá las mejores ofertas en nuestra tienda">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div> -->
+
+        <div class="carouselContainer">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="/product/productcat/2"><img src="/image/carousel/1.png" class="d-block w-100" alt="Lentes de sol">
+                <div class="carousel-caption d-md-block">
+                  <h5>Lentes de sol</h5>
+                  <p>Cuidá tu vista de los rayos UV.</p></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="/product/productcat/4"><img src="/image/carousel/2.png" class="d-block w-100" alt="Lentes gaming">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Lentes gaming</h5>
+                  <p>Conseguí los mejores lentes para cuidar tu visión de la luz azul de las pantallas.</p>
+                </div></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/product/productcat/1"><img src="/image/carousel/3.png" class="d-block w-100" alt="Marcos para recetas">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Marcos para recetas</h5>
+                  <p>Encontrá los mejores diseños para tus nuevos lentes y mantenete a la moda.</p></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="/product/productcat/3"><img src="/image/carousel/4.png" class="d-block w-100" alt="Lentes de contacto">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Lentes de contacto</h5>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, assumenda!</p></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="/search?keywords=limpiador"><img src="/image/carousel/5.png" class="d-block w-100" alt="Mantené tus cristales limpios">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Líquidos de limpieza</h5>
+                  <p>Cuidá tus cristales y mantenelos limpios.</p></a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <a href="/product/productOfertas"><img src="/image/carousel/6.png" class="d-block w-100" alt="Encontrá las mejores ofertas en nuestra tienda">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Ofertas</h5>
+                  <p>Encontrá las mejores ofertas en nuestra tienda</p></a>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>   
+        </div>
+
+        <section class="categories">
+          <section class="section1-home">
+            <a href="/product/productcat/1"><img src="/image/marcos.png" alt="Marcos para receta"></a>
+            <!-- <a href="/product/productcat/1"><button class="btn " >Recetados</button></a> -->
+            <a href="/product/productcat/1"><div class="grande g0 " >Recetados</div></a>
+          </section>
+          
+  
+          <section class="section2-home">
+            <a href="/product/productcat/2"><img src="/image/sol.png" alt="Lentes de sol"></a>
+             <!-- <a href="/product/productcat/2"><button class="btn ">Lentes de sol</button></a> -->
+             <a href="/product/productcat/2"><div class=" grande g1">Lentes de sol</div></a>
+          </section>
+  
+          <section class="section1-home">
+            <a href="/product/productcat/4"><img src="/image/bluelight.png" alt=""></a>
+            <!-- <a href="/product/productcat/4"><button class="btn ">Gaming</button></a> -->
+            <a href="/product/productcat/4"><div class=" grande g0">Gaming</div></a>
+          </section>
+        </section>
+
+      <hr><h4>Destacados</h4><hr>
+        <section class="cont">
+          
+         
+        <%-include("partials/vistaProductos.ejs") %>
+        
+      </section>
+       
+
+        <section class="sucursales">
+            <hr><h4>Sucursales</h4><hr>
+            <div class="sucursalesItems">
+              <a href="https://www.google.com/maps/place/Av.+Jujuy+866,+C1229ABQ+CABA/@-34.6195157,-58.4053028,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccae37a06e4af:0x367840d98e88e03f!8m2!3d-34.6195157!4d-58.4031141" target="_blank">
+              <div class="sucursal">
+              <span class="sucursalName">San Cristóbal</span>
+              <span class="sucursalData">Av. Jujuy 866</span>
+            </div>
+            </a>
+            <a href="https://www.google.com/maps/place/Av+Triunvirato+5423,+C1431FCH+CABA/data=!4m2!3m1!1s0x95bcb6f610ade5e1:0x4a91d2a300431c25?sa=X&ved=2ahUKEwjc5-PCjq_yAhVuGrkGHfJ0DUIQ8gF6BAgIEAE" target="_blank">
+            <div class="sucursal">
+              <span class="sucursalName">Villa Urquiza</span>
+              <span class="sucursalData">Triunvirato 5423</span>
+            </div>
+          </a>
+          <a href="https://www.google.com/maps/place/Bulnes+2020,+C1425+CABA/data=!4m2!3m1!1s0x95bcca822712dbeb:0x3d5435e2141747f2?sa=X&ved=2ahUKEwiaxvXfjq_yAhWQErkGHQsSCrAQ8gF6BAgIEAE" target="_blank">
+            <div class="sucursal">
+              <span class="sucursalName">Palermo</span>
+              <span class="sucursalData">Bulnes 2020</span>
+            </div>
+          </a>
+          </div>
+        </section><hr>
+
+        <section class=turnBanner>
+          <img src="/image/turno.png" alt="Reservá tu turno">
+          <!-- <a href="/turnos"></a><button class="btn">Pedir turno</button></a> -->
+          <a href="/turnos"><button class="btn">Pedir turno</button></a>
+         
+        </section>
+        <hr>
+
+        <span class="top"><a href="#top">Volver arriba</a></span>
+
+        <hr>
+
+         
+    
+    
+
+    <script>
+    
+      window.onload = function tamano() {
+      let container = document.getElementById("externalContainer");
+      /* let prodCard = document.getElementById("product-card") */
+      container.style.width = "100vw";
+     /*  prodCard.style.width = "50%" */
+
+     let $grande = document.querySelector(".grande")
+    $grande.style.width="200px"
+    $grande.style.height="200px"
+    }
+    
+    </script>
+ 
+</body>
+<%- include('./partials/footer.ejs') %>
+</html>

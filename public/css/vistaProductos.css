@@ -1,0 +1,252 @@
+
+a{
+    text-decoration: none;
+ }
+ul{
+    list-style: none;
+}
+.external-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto 0;
+    padding-top: 15px;
+   
+}
+.external-container .product-card{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid var(--tipos); */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px 3px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .55);
+}
+
+.external-container .images{
+    display: flex;
+    width: 50vw ;
+    height: 50vw;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid var(--tipos);
+    border-radius: 30px; */
+    margin-bottom: 10px;
+    background-color: white;
+}
+.imagDisc{
+    width: 30% !important;
+    height: 19% !important;
+    position: absolute;
+    transform: rotate(45deg)!important;
+    /* left: 10vw; */
+    right: -45px;
+    top: 0;
+    z-index: 10;
+}
+.addCar{
+    width: 30% !important;
+    height: 5% !important;
+    position: absolute;
+    /* transform: rotate(45deg); */
+    top: 0px !important;
+    font-size: 40px !important;
+    color: var(--tipos);
+    right: 140px;
+    z-index: 10;
+}
+.external-container .images .picture{
+    width: 98%;
+    height: 98%;
+    object-fit: contain;
+    position: absolute;
+    animation: twist 7s infinite ;
+    border-radius: 35px;
+}
+.external-container .product-name{
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+}
+.external-container .product-name p{
+    font-size: 4vw;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: var(--tipos);
+}
+.external-container .price2{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* text-align: center; */
+    margin: 0 auto 5px;
+    
+}
+.external-container .price{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.external-container .price i{
+    margin-right: 2px;
+    font-size: 5vw;
+}
+
+.external-container .images .rear{
+
+    transform: scaleX(-1) perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+}
+.pName{
+    margin-right: 25px;
+}
+.descrip{
+    font-size: 10px !important;
+    font-weight: lighter !important;
+    text-align: justify;
+    margin: 2px 10px;
+    
+}
+
+
+@media (min-width: 768px){
+    .external-container{  
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 80%;
+    }
+    .external-container .product-card{
+        width: 25vw;
+        height:26.5vw;
+        margin: 25px 15px;
+        
+    }
+    .external-container .product-name p{
+        font-size: 17px;
+        color: var(--tipos);
+    }
+    .external-container .product-name i{
+        font-size: 17px;
+        color: var(--tipos);
+    }
+    .external-container .images{
+        width: 73%;
+        
+    }
+    .pName{
+        margin-right: 25px;
+    }
+    .descrip{
+        font-size: 10px !important;
+    }
+    .imagDisc{
+        width: 30% !important;
+        height: 19% !important;
+        position: absolute;
+        transform: rotate(45deg)!important;
+        right: -33px;
+        top: 0;
+        z-index: 10;
+    }
+    .addCar{
+        width: 30% !important;
+        height: 5% !important;
+        position: absolute;
+        /* transform: rotate(45deg); */
+        top: 0px !important;
+        font-size: 40px !important;
+        color: var(--tipos);
+        left : -25px;
+        z-index: 10;
+    }
+}      
+@media (min-width: 1024px){
+   
+    .external-container .images .picture{
+    transform: scaleX(-1);
+    }
+    .external-container .images .rear{
+
+        transform:  scaleX(-1) perspective(600px) rotateY(180deg);
+        backface-visibility: hidden;
+    }
+    .external-container{
+        width: 80% !important ;
+        justify-content: space-between;
+        margin: 5px auto 10px;
+        padding: 10px 0px 0px !important;
+    }
+    .external-container .product-card{
+        width: 22vw;
+        height: 28vw;
+       
+       
+    }
+    .external-container .product-name p{
+        font-size: 1.3vw;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+    .external-container .images{
+        width: 90%;
+        height: 90%;
+    }
+    .external-container .images img{
+        height: 93%;
+        width: 93%;
+        animation: none ;
+    }
+    .external-container .images .rear{
+        backface-visibility: inherit;
+        transition:  1s;
+    }
+    .external-container .images .rear:hover{
+        transform: scaleX(0.1%);
+    }
+    
+    .descrip{
+        font-size: 10px !important;
+    }
+    /* .addCar{
+        width: 30% !important;
+        height: 19% !important;
+        position: absolute;
+        
+        top: 0px !important;
+        font-size: 40px !important;
+        color: var(--tipos);
+        left: 5px;
+        z-index: 10;
+    } */
+    .imagDisc{
+        width: 30% !important;
+        height: 19% !important;
+        position: absolute;
+        transform: rotate(45deg)!important;
+        right: -15px;
+        top: 0;
+        z-index: 10;
+    }
+    .addCar{
+        width: 30% !important;
+        height: 5% !important;
+        position: absolute;
+        /* transform: rotate(45deg); */
+        top: 0px !important;
+        font-size: 40px !important;
+        color: var(--tipos);
+        left: 0;
+        z-index: 10;
+    }
+    
+}

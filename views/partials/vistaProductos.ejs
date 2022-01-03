@@ -1,0 +1,48 @@
+<script src='/js/views.js' defer></script>
+<section class="external-container" id="externalContainer" >
+    <% arrayProduct.forEach(item => {%> 
+    <!-- <a class="product-card" href="/product/detail/<%- item.id %>  "> -->
+    <div class="product-card" href="/product/detail/<%- item.id %>  ">
+            <div class="images" id=twist >
+                <div class="boxCont">
+                    <% if (item.discount == 5) { %>
+                        <img class="imagDisc" src="/image/gemOfer5.png" alt="">
+                    <% } %>
+                    <% if (item.discount == 10) { %>
+                        <img class="imagDisc" src="/image/gemOfer10.png" alt="">
+                    <% } %>
+                    <% if (item.discount == 15) { %>
+                        <img class="imagDisc" src="/image/gemOfer15.png" alt="">
+                    <% } %>
+                    <% if (item.discount == 20) { %>
+                        <img class="imagDisc" src="/image/gemOfer20.png" alt="">
+                    <% } %>
+                    <% if (item.discount == 25) { %>
+                        <img class="imagDisc" src="/image/gemOfer25.png" alt="">
+                    <% } %>
+                    <a href="#"><i name="troley" id="<%- item.id %>" class="addCar fa icon-troley1"></i></a>
+                </div>
+                <a class="picture" href="/product/detail/<%- item.id %>  ">
+                    <img class="frontal picture" src="/image/productImages/<%- item.image[1]? item.image[1].images : "logFN.jpg" %> "  alt="">
+                    <img class="rear picture" id="gira" src="/image/productImages/<%- item.image[0]? item.image[0].images : "logFI.jpg" %>  "  alt="">
+                </a>
+            </div>
+        <div class="product-name">
+            
+            <div class="price2" > 
+                <p class="pName"><%- item.name %>  </p>   
+                <div class="price">            
+                    <i id="dollar" class="fas fa-dollar-sign"></i>
+                    <p class="pes"><%- item.price %></p>
+                </div>
+            </div>
+            <p class="descrip">Descripción : <%- item.description %></p>
+        </div>
+    <!-- </a> --> 
+</div> 
+    <% })  %> 
+    <hr class="hr-mobile">         
+
+   
+            
+</section>  

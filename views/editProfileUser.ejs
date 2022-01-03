@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+  <body>
+
+<!-- header -->
+<%- include("partials/header")  %>
+ 
+<!-- fin header  -->
+
+<main class="mainEditUser">
+    <form class="form" id="form" action="/users/editUser/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="baseProfile">
+            <div class="title_C">
+                <div class="title_1">Mis datos</div>
+            </div>
+            
+            <section class="sectionM">
+                    <div class="imagesReg1 contImag" id="imagePreview"  >
+                        <img id="old1" src="/image/userAvatars/<%= user.avatar %> " alt="">
+                    </div>
+                    <div class="inputMask bordeColor">
+                        <input class="inputOut"  type="file" id="examinar" name="avatar" value=""> <!-- este nombre va en el metodo post al cargar en multer -->
+                        Elija una Imagen
+                    </div> 
+                    <p id="errorImage"></p>
+                     <span class="text-danger" id="errorAvatar"> </span>
+            </section >
+            <div class="datos-user">
+                 <span class="text-danger" id="errorNombre"> </span>
+                <div class="data-edit">
+                    <label class="midle1" for="">Nombre</label>
+                    <input class="input1" id="nombre" type="text" value="<%= locals.old ? old.name : user.name %>" name="name">
+                
+                    <% if (locals.errors && errors.name) { %>
+                        
+                        <span class="text-danger"><%= errors.name.msg %> </span>
+                    <% } %> 
+                </div>
+                  <span class="text-danger" id="errorApellido"> </span> 
+                <div class="data-edit">
+                    
+                    <label class="midle1" for="">Apellido</label>
+                    <input class="input1" id="apellido" type="text" value="<%= locals.old ? old.lastName : user.lastName %>"name="lastName">
+                    <% if (locals.errors && errors.lastName) { %>
+                        <small class="text-danger"><%= errors.lastName.msg %> </small>
+                    <% } %>
+                   
+                </div>
+                
+                <div class="data-edit">
+                    <label class="midle1" for="">E-mail</label>
+                    <input class="input1" id="emailEdit" type="email" readonly value="<%= user.email %>"name="mail">
+                </div>
+
+                <span class="text-danger" id="errorTelefono"> </span>
+                <div class="data-edit">
+                    <label class="midle1" for="">Teléfono</label>
+                    <input class="input1" id="telefonoEdit" type="number" value="<%= user.phone %>"name="phone">
+                  
+                </div>
+                <span class="text-danger" id="errorDireccion"> </span>
+                <div class="data-edit">
+                    <label class="midle1" for="">Direcciòn</label>
+                    <input class="input1" type="text" id="direccionEdit" value="<%= user.address%>"name="address" placeholder='ej : Calle 1234'>
+                  
+                </div>
+                   <span class="text-danger" id="errorCp"> </span>
+                <div class="data-edit">
+                    <label class="midle1 out" for="" id="lcp" >Código Postal</label>
+                    <input class="input1 out" type="text" value="<%= user.pCode %>"name="pCode" id="cp" placeholder='ej: 1234'>
+                  
+                </div>
+                <span class="text-danger" id="errorCiudad"> </span>
+                <div class="data-edit">
+                    <label class="midle1 out" for="" id="lcity" >Ciudad</label>
+                    <input class="input1 out" type="text" value="<%= user.city %>"name="city" id="city"placeholder='ej: La Plata'>
+               
+                </div>
+                <span class="text-danger" id="errorProvincia"> </span>
+                <div class="data-edit">
+                    <label class="midle1 out" for="" id="lprov" >Provincia</label>
+                    <input class="input1 out" type="text" value="<%= user.province %>"name="province" id="prov" placeholder='ej: Buenos Aires'>
+                     
+                </div>
+                <div class="contbutton" id="contbutton" action="">
+                    
+                    <button  type="submit" class="btn btn-user bSave" id="bSave">Guardar datos</button>
+                    
+                     <span class="text-danger" id="errorSubmit"> </span>
+                </div>
+            </div>
+         </div>
+    </form>
+    
+</main>
+<script>
+  
+
+
+    let inputImage = document.getElementById('examinar')
+inputImage.addEventListener('change', 
+function fileValidation(){
+    var errorImage = document.getElementById('errorImage')
+    var filePath = inputImage.value;
+    var allowefExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    if(!allowefExtensions.exec(filePath)){ 
+        let error = 'Solo usá extensiones (.jpg - .jpeg - .png - .gif)'
+        errorImage.innerHTML = error;
+        inputImage.value = '';
+        document.getElementById('imagePreview').innerHTML = '<img src="/image/userAvatars/avatar.png"/>';
+        return false;
+    }else{
+        if(inputImage.files && inputImage.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                document.getElementById('imagePreview').innerHTML = '<img src="' + e.target.result +'"/>';
+            };
+            reader.readAsDataURL(inputImage.files[0]);
+            errorImage.innerHTML = '';
+        }
+    }
+})
+
+</script>   
+<!-- footer -->
+<%- include("partials/footer")  %> 
+<script src="../../js/validationProfileEditFront.js"></script>
+<!-- fin footer  -->
+  </body>
+</html>

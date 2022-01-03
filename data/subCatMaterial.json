@@ -1,0 +1,20 @@
+[
+    
+    {
+        "id" : 1,
+        "mater" : "Acetato"
+    },
+    {
+        "id" : 2,
+        "mater" : "Grilamid"
+    },
+    {
+        "id" : 3,
+        "mater" : "Metal"
+    },
+    {
+        "id" : 0,
+        "mater" : "Contacto"
+    }
+    
+]

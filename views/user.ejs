@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- head -->
+<%- include("partials/head")  %> 
+<!-- fin head-->
+  <body>
+
+<!-- header -->
+<%- include("partials/header")  %>
+ 
+<!-- fin header  -->
+
+<main class="mainEditUser">
+    <form class="form" action="">
+        <div class="baseProfile">
+            <div class="title_C">
+                <span class="title_1">Mis datos</span>
+            </div>
+            <section class="sectionM">
+                    <div class="imagesReg1" id="imagePreview"  >
+                        <img id="old1" src="/image/userAvatars/<%= user.avatar %> " alt="">
+                    </div>
+                    
+            </section >
+            <div class="datos-user">
+                <div class="data-edit">
+                    <label class="label midle1" for="">Nombre</label>
+                    <p class="input1"><%= user.name %></p>
+                    
+                </div>
+                <div class="data-edit">
+                    <label class="label midle1" for="">Apellido</label>
+                    <p class="input1"><%= user.lastName %></p>
+                    
+                </div>
+                <div class="data-edit">
+                    <label class="label midle1" for="">E-mail</label>
+                    <p class="input1"><%= user.email %></p>
+                    
+                </div>
+                <div class="data-edit">
+                    <label class="label midle1" for="">Teléfono</label>
+                    <p class="input1"><%= user.phone %></p>
+                    
+                </div>
+                <div class="data-edit">
+                    <label class="label midle1" for="">Direcciòn</label>
+                    <p class="input1"><%= user.address ? user.address : "------" %></p>
+                    
+                </div>
+                
+                <div class="contbutton" id="contbutton" action="">
+                    <a href="/users/editUser/<%= user.id %>" class="btn btn-user">Editar Datos</a>
+                    
+                    
+                </div>
+            </div>
+         </div>
+    </form>
+    
+</main>   
+<!-- footer -->
+<%- include("partials/footer")  %> 
+<!-- fin footer  -->
+  </body>
+</html>
